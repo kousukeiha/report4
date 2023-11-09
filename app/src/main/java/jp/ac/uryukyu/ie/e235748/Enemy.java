@@ -35,15 +35,14 @@ public class Enemy {
      */
     
     public void attack(Hero hero){
-    
-        //修正箇所
-        //enemyが生きている間は攻撃ができ、enemyが死んだ時に攻撃ができないようにした
+        if(dead==false){
         int damage = (int)(Math.random() * attack);//変数damegeのスコープ
         System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.name, damage);
         hero.wounded(damage);
-        
-        
+    
+        }
     }
+
 
     /**
      * 自身へ攻撃されたときのダメージ処理をするメソッド。
